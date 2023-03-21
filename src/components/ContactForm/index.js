@@ -38,7 +38,7 @@ function ContactForm() {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          alert("Message sent successfully. The devine will get back to you as soon as they're done answering some prayers!");
+          alert("Message sent successfully. The Divine will get back to you as soon as they're done answering some prayers!");
           setFormData({
             subject: "",
             firstName: "",
@@ -80,7 +80,7 @@ function ContactForm() {
       >
         <CardContent>
           <Typography gutterBottom variant="h5">
-            Contact The Devine
+            Contact The Divine
           </Typography>
           <Typography
             gutterBotom

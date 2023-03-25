@@ -8,8 +8,6 @@ import Grid from "@mui/material/Grid";
 import { TextField } from "@mui/material";
 import emailjs from "emailjs-com";
 
-
-
 function ContactForm() {
   const [formData, setFormData] = useState({
     subject: "",
@@ -58,7 +56,7 @@ function ContactForm() {
       );
   };
   return (
-    <Box sx={{ flexGrow: 1, m: 1 }}>
+    <Box sx={{ flexGrow: 1, m: 2 }}>
       <Typography
         variant="h2"
         style={{

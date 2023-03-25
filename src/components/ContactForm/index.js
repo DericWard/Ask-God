@@ -8,6 +8,8 @@ import Grid from "@mui/material/Grid";
 import { TextField } from "@mui/material";
 import emailjs from "emailjs-com";
 
+
+
 function ContactForm() {
   const [formData, setFormData] = useState({
     subject: "",
@@ -17,7 +19,6 @@ function ContactForm() {
     phone: "",
     message: "",
   });
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({
@@ -25,7 +26,6 @@ function ContactForm() {
       [name]: value,
     }));
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     emailjs
@@ -38,7 +38,9 @@ function ContactForm() {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          alert("Message sent successfully. The Divine will get back to you as soon as they're done answering some prayers!");
+          alert(
+            "Message sent successfully. The Divine will get back to you as soon as they're done answering some prayers!"
+          );
           setFormData({
             subject: "",
             firstName: "",
@@ -47,6 +49,8 @@ function ContactForm() {
             phone: "",
             message: "",
           });
+          const audio = new Audio(process.env.PUBLIC_URL + "/audio/ahhh.wav");
+          audio.play();
         },
         (error) => {
           console.log("FAILED...", error);
@@ -54,7 +58,6 @@ function ContactForm() {
         }
       );
   };
-
   return (
     <Box sx={{ flexGrow: 1, m: 1 }}>
       <Typography
@@ -68,7 +71,6 @@ function ContactForm() {
       >
         CONTACT
       </Typography>
-
       <Card
         style={{
           maxWidth: 450,

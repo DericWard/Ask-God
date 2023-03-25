@@ -49,8 +49,7 @@ function ContactForm() {
             phone: "",
             message: "",
           });
-          const audio = new Audio(process.env.PUBLIC_URL + "/audio/ahhh.wav");
-          audio.play();
+    
         },
         (error) => {
           console.log("FAILED...", error);
